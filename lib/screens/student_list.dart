@@ -26,14 +26,15 @@ class _StudentListState extends State<StudentList> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         backgroundColor: CustomColor.greenColor,
-        onPressed: () {
-          Navigator.of(context).push(
+        onPressed: () async {
+          await Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) {
                 return AddStudent();
               },
             ),
           );
+          setState(() {});
         },
         label: Row(
           children: [
