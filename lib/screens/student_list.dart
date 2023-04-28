@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:student_course_list/data/constants/custom_color.dart';
+import 'package:student_course_list/screens/add_student.dart';
 
 import '../data/model/student.dart';
 
@@ -22,6 +23,31 @@ class _StudentListState extends State<StudentList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: CustomColor.greenColor,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) {
+                return AddStudent();
+              },
+            ),
+          );
+        },
+        label: Row(
+          children: [
+            Icon(
+              Icons.add,
+              color: Colors.white,
+            ),
+            Text(
+              'Add Student',
+              style: TextStyle(color: Colors.white),
+            ),
+          ],
+        ),
+      ),
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: CustomColor.blackColor,
